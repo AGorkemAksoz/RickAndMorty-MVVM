@@ -10,12 +10,12 @@ import Foundation
 
 // MARK: - Character
 struct Character: Codable {
-    let results: [Result]?
+    let results: [Results]?
 }
 
 
 // MARK: - Result
-struct Result: Codable {
+struct Results: Codable {
     let id: Int?
     let name: String?
     let status: Status?

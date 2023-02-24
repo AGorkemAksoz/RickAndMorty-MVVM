@@ -30,7 +30,13 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+        getData()
+    }
+    
+    private func getData() {
+        RMService.shared.getCharacters { result, error in
+            print(result)
+        }
     }
     
     
