@@ -15,6 +15,12 @@
 		DD91882E29A7BFED00766D9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91882D29A7BFED00766D9D /* HomeViewController.swift */; };
 		DD91883029A7BFFA00766D9D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91882F29A7BFFA00766D9D /* SearchViewController.swift */; };
 		DD91883229A7C00200766D9D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883129A7C00200766D9D /* FavoritesViewController.swift */; };
+		DD91883529A89A9900766D9D /* RMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883429A89A9900766D9D /* RMCollectionViewCell.swift */; };
+		DD91883829A8CEAB00766D9D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883729A8CEAB00766D9D /* NetworkManager.swift */; };
+		DD91883A29A8CEC000766D9D /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883929A8CEC000766D9D /* URLBuilder.swift */; };
+		DD91883C29A8CECA00766D9D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883B29A8CECA00766D9D /* NetworkHelper.swift */; };
+		DD91883F29A8D7A400766D9D /* RMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91883E29A8D7A400766D9D /* RMService.swift */; };
+		DD91884229A8DC3800766D9D /* RMCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91884129A8DC3800766D9D /* RMCharacters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		DD91882D29A7BFED00766D9D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DD91882F29A7BFFA00766D9D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DD91883129A7C00200766D9D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		DD91883429A89A9900766D9D /* RMCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD91883729A8CEAB00766D9D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DD91883929A8CEC000766D9D /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		DD91883B29A8CECA00766D9D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		DD91883E29A8D7A400766D9D /* RMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMService.swift; sourceTree = "<group>"; };
+		DD91884129A8DC3800766D9D /* RMCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,10 @@
 		DD91881429A7BC8700766D9D /* Rick&Morty-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				DD91884029A8DC2800766D9D /* Model */,
+				DD91883D29A8D79400766D9D /* Service */,
+				DD91883629A8CBA000766D9D /* Network */,
+				DD91883329A89A7500766D9D /* Components */,
 				DD91882C29A7BFC600766D9D /* Models */,
 				DD91882929A7BFAF00766D9D /* Views */,
 				DD91882B29A7BFBF00766D9D /* ViewModels */,
@@ -95,6 +111,40 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DD91883329A89A7500766D9D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DD91883429A89A9900766D9D /* RMCollectionViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DD91883629A8CBA000766D9D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DD91883729A8CEAB00766D9D /* NetworkManager.swift */,
+				DD91883929A8CEC000766D9D /* URLBuilder.swift */,
+				DD91883B29A8CECA00766D9D /* NetworkHelper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DD91883D29A8D79400766D9D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DD91883E29A8D7A400766D9D /* RMService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DD91884029A8DC2800766D9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD91884129A8DC3800766D9D /* RMCharacters.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,12 +217,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD91884229A8DC3800766D9D /* RMCharacters.swift in Sources */,
 				DD91883029A7BFFA00766D9D /* SearchViewController.swift in Sources */,
 				DD91881A29A7BC8700766D9D /* MainTabBarViewController.swift in Sources */,
+				DD91883C29A8CECA00766D9D /* NetworkHelper.swift in Sources */,
+				DD91883A29A8CEC000766D9D /* URLBuilder.swift in Sources */,
 				DD91881629A7BC8700766D9D /* AppDelegate.swift in Sources */,
 				DD91881829A7BC8700766D9D /* SceneDelegate.swift in Sources */,
+				DD91883829A8CEAB00766D9D /* NetworkManager.swift in Sources */,
+				DD91883F29A8D7A400766D9D /* RMService.swift in Sources */,
 				DD91883229A7C00200766D9D /* FavoritesViewController.swift in Sources */,
 				DD91882E29A7BFED00766D9D /* HomeViewController.swift in Sources */,
+				DD91883529A89A9900766D9D /* RMCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
