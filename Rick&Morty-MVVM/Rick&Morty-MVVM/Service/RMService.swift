@@ -12,9 +12,9 @@ final class RMService {
     private init() {}
     
     func getCharacters(completion: @escaping ([Results]?, String?) -> ()) {
-        let url = URLBuilder().build()
+        let url = URLBuilder().buildURL()
         
-        NetworkManager.shared.request(type: Character.self , url: url, method: .get) { response in
+        NetworkManager.shared.request(type: Characters.self , url: url, method: .get) { response in
             switch response {
             case .success(let items):
                 completion(items.results, nil)
@@ -22,5 +22,19 @@ final class RMService {
                 completion(nil, error.localizedDescription)
             }
         }
+    }
+    
+    func getCharacter(id: Int, completion: @escaping (Results?, String?) -> ()) {
+        let url = URLBuilder().buildDetailURL(id: id)
+        
+        NetworkManager.shared.request(type: Results.self, url: url, method: .get) { response in
+            switch response {
+            case .success(let item):
+                completion(item, nil)
+            case .failure(let error):
+                completion(nil, error.localizedDescription)
+            }
+        }
+        
     }
 }

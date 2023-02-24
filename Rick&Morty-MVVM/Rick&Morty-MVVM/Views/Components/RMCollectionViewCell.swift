@@ -14,6 +14,9 @@ class RMCollectionViewCell: UICollectionViewCell {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints  = false
         imageView.backgroundColor = .brown
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 16
         return imageView
     }()
     
@@ -30,4 +33,21 @@ class RMCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         RMImageView.frame = contentView.bounds
     }
+    
+    func setup(_ imagePath: String?) {
+        guard let url = URL(string: imagePath ?? "") else { return }
+        
+        DispatchQueue.global().async { [weak self] in
+             guard let imageData = try? Data(contentsOf: url) else {
+                 return
+             }
+             let image = UIImage(data: imageData)
+             DispatchQueue.main.async {
+                 self?.RMImageView.image = image
+             }
+         }
+
+
+    }
 }
+

@@ -8,18 +8,22 @@
 import Foundation
 
 protocol URLBuilderInterface {
-    func build() -> String
+    func buildURL() -> String
+    func buildDetailURL(id: Int) -> String
 }
 
 final class URLBuilder:URLBuilderInterface {
-    
+
     private let baseURL = "https://rickandmortyapi.com"
     private let path = "/api/character"
     
 
-    func build() -> String {
+    func buildURL() -> String {
         baseURL + path
     }
     
+    func buildDetailURL(id: Int) -> String {
+        "\(baseURL + path)/\(id)"
+    }
     
 }

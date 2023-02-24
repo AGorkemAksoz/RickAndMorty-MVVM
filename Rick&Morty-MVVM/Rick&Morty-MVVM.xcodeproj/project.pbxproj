@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD39BD7429A940EC007C4B72 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39BD7329A940EC007C4B72 /* RMCharacter.swift */; };
+		DD39BD7929A9439C007C4B72 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39BD7829A9439C007C4B72 /* DetailScreenViewController.swift */; };
 		DD91881629A7BC8700766D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91881529A7BC8700766D9D /* AppDelegate.swift */; };
 		DD91881829A7BC8700766D9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91881729A7BC8700766D9D /* SceneDelegate.swift */; };
 		DD91881A29A7BC8700766D9D /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91881929A7BC8700766D9D /* MainTabBarViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD39BD7329A940EC007C4B72 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
+		DD39BD7829A9439C007C4B72 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		DD91881229A7BC8700766D9D /* Rick&Morty-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD91881529A7BC8700766D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD91881729A7BC8700766D9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD39BD7529A9430B007C4B72 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DD91882D29A7BFED00766D9D /* HomeViewController.swift */,
+				DD91882F29A7BFFA00766D9D /* SearchViewController.swift */,
+				DD91883129A7C00200766D9D /* FavoritesViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DD39BD7629A94364007C4B72 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				DD39BD7729A9436C007C4B72 /* DetailScreen */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		DD39BD7729A9436C007C4B72 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DD39BD7829A9439C007C4B72 /* DetailScreenViewController.swift */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
 		DD91880929A7BC8700766D9D = {
 			isa = PBXGroup;
 			children = (
@@ -72,11 +102,9 @@
 		DD91881429A7BC8700766D9D /* Rick&Morty-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				DD91884029A8DC2800766D9D /* Model */,
+				DD91884029A8DC2800766D9D /* Models */,
 				DD91883D29A8D79400766D9D /* Service */,
 				DD91883629A8CBA000766D9D /* Network */,
-				DD91883329A89A7500766D9D /* Components */,
-				DD91882C29A7BFC600766D9D /* Models */,
 				DD91882929A7BFAF00766D9D /* Views */,
 				DD91882B29A7BFBF00766D9D /* ViewModels */,
 				DD91881529A7BC8700766D9D /* AppDelegate.swift */,
@@ -92,9 +120,9 @@
 		DD91882929A7BFAF00766D9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DD91882D29A7BFED00766D9D /* HomeViewController.swift */,
-				DD91882F29A7BFFA00766D9D /* SearchViewController.swift */,
-				DD91883129A7C00200766D9D /* FavoritesViewController.swift */,
+				DD39BD7629A94364007C4B72 /* General */,
+				DD91883329A89A7500766D9D /* Components */,
+				DD39BD7529A9430B007C4B72 /* Core */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,13 +132,6 @@
 			children = (
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		DD91882C29A7BFC600766D9D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DD91883329A89A7500766D9D /* Components */ = {
@@ -139,12 +160,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		DD91884029A8DC2800766D9D /* Model */ = {
+		DD91884029A8DC2800766D9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				DD91884129A8DC3800766D9D /* RMCharacters.swift */,
+				DD39BD7329A940EC007C4B72 /* RMCharacter.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD39BD7929A9439C007C4B72 /* DetailScreenViewController.swift in Sources */,
 				DD91884229A8DC3800766D9D /* RMCharacters.swift in Sources */,
 				DD91883029A7BFFA00766D9D /* SearchViewController.swift in Sources */,
 				DD91881A29A7BC8700766D9D /* MainTabBarViewController.swift in Sources */,
@@ -227,6 +250,7 @@
 				DD91883829A8CEAB00766D9D /* NetworkManager.swift in Sources */,
 				DD91883F29A8D7A400766D9D /* RMService.swift in Sources */,
 				DD91883229A7C00200766D9D /* FavoritesViewController.swift in Sources */,
+				DD39BD7429A940EC007C4B72 /* RMCharacter.swift in Sources */,
 				DD91882E29A7BFED00766D9D /* HomeViewController.swift in Sources */,
 				DD91883529A89A9900766D9D /* RMCollectionViewCell.swift in Sources */,
 			);

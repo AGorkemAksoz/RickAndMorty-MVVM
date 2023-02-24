@@ -9,9 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private var characters = [Results]()
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 180, height: 300)
+        layout.itemSize = CGSize(width: 190, height: 230)
         layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -30,15 +32,23 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        title = "Rick and Morty Characters"
+        
         getData()
     }
     
     private func getData() {
-        RMService.shared.getCharacters { result, error in
-            print(result)
+        RMService.shared.getCharacters { [weak self] result, error in
+            self?.characters = result!
+            self?.reloadView()
         }
     }
     
+    private func reloadView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -49,15 +59,25 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCollectionViewCell.identifier, for: indexPath) as? RMCollectionViewCell
-        
-       
+        cell?.setup(characters[indexPath.item].image)
         return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        
+        RMService.shared.getCharacter(id: characters[indexPath.item].id ?? 21) { [weak self] item, error in
+            DispatchQueue.main.async {
+                let vc = DetailScreenViewController(character: self?.characters[indexPath.item])
+                vc.modalPresentationStyle = .fullScreen
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     
 }
