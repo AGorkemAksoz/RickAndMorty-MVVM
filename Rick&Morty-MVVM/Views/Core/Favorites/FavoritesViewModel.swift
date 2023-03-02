@@ -40,7 +40,6 @@ extension FavoritesViewModel: FavoritesViewModelInterface {
     func fetchData() {
         DataPersistenceManager.shared.fetchingCharacterFromDatabase { [weak self] result in
             switch result {
-                
             case .success(let items):
                 self?.characters = items
                 self?.view?.reloadTable()

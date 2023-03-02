@@ -79,22 +79,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		DD39BD7629A94364007C4B72 /* General */ = {
-			isa = PBXGroup;
-			children = (
-				DD39BD7729A9436C007C4B72 /* DetailScreen */,
-			);
-			path = General;
-			sourceTree = "<group>";
-		};
-		DD39BD7729A9436C007C4B72 /* DetailScreen */ = {
-			isa = PBXGroup;
-			children = (
-				DD39BD7829A9439C007C4B72 /* DetailScreenViewController.swift */,
-			);
-			path = DetailScreen;
-			sourceTree = "<group>";
-		};
 		DD57BF5A29ACCD620093E478 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +125,6 @@
 		DD91882929A7BFAF00766D9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DD39BD7629A94364007C4B72 /* General */,
 				DD91883329A89A7500766D9D /* Components */,
 				DD39BD7529A9430B007C4B72 /* Core */,
 			);
@@ -154,6 +137,7 @@
 				DD91883429A89A9900766D9D /* RMCollectionViewCell.swift */,
 				DD57BF5329AA2B8B0093E478 /* SearchResultViewController.swift */,
 				DDA8DEA029AF82C600710416 /* RMTableViewCell.swift */,
+				DD39BD7829A9439C007C4B72 /* DetailScreenViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
