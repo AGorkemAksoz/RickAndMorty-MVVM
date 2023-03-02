@@ -62,7 +62,7 @@ extension HomeViewController: HomeViewControllerInterface {
         navigationController?.navigationBar.tintColor = .label
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         
-        title = "Home"
+        title = "Rick and Morty"
     }
     
     func reloadView() {

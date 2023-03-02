@@ -82,7 +82,6 @@ extension SearchViewController: SearchViewControllerInterface {
     
     func configureSearchController() {
         navigationItem.searchController = searchController
-        
         searchController.searchResultsUpdater = self
     }
     
@@ -94,9 +93,7 @@ extension SearchViewController: SearchViewControllerInterface {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
     }
     
-    
 }
-
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
